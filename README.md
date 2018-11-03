@@ -1,5 +1,6 @@
 # A command-line based RPN (reverse polish notation) calculator.
-> The following operators are supported:
+
+The following operators are supported:
 *   '+'   - performs the addition on the top two items from the stack
 *   '-'   - performs the subtraction on the top two items from the stack
 *   '*'   - performs the multiplication on the top two items from the stack
@@ -9,20 +10,20 @@
 *   clear - removes all items from the stack
 *   exit  - exit the calculator
 
-> Examples:
-1 2 +
-stack: 3
-2 -
-stack: 1
-4 *
-stack: 4
-3 /
-stack: 1.3333333333
-sqrt
-stack: 1.1547005383
-undo
-stack: 1.3333333333
-clear
-stack: 
-undo
-stack: 1.3333333333
+  Examples:
+  1 2 +
+  stack: 3
+  2 -
+  stack: 1
+  4 *
+  stack: 4
+  3 /
+  stack: 1.3333333333
+  sqrt
+  stack: 1.1547005383
+  undo
+  stack: 1.3333333333
+  clear
+  stack: 
+  undo
+  stack: 1.3333333333
