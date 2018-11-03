@@ -9,7 +9,7 @@
 *   clear - removes all items from the stack
 *   exit  - exit the calculator
 
->Examples:
+> Examples:
 1 2 +
 stack: 3
 2 -
