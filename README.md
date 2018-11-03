@@ -11,7 +11,7 @@ The following operators are supported:
 *   exit  - exit the calculator
 
 Examples:
-<code>
+<pre>
 1 2 +
 stack: 3
 2 -
@@ -28,4 +28,4 @@ clear
 stack: 
 undo
 stack: 1.3333333333
-</code>
+</pre>
