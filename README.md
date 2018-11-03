@@ -1,6 +1,6 @@
 # rpn-calculator
-A command-line based RPN (reverse polish notation) calculator.
-The following operators are supported:
+# A command-line based RPN (reverse polish notation) calculator.
+# The following operators are supported:
    '+'   - performs the addition on the top two items from the stack
    '-'   - performs the subtraction on the top two items from the stack
    '*'   - performs the multiplication on the top two items from the stack
