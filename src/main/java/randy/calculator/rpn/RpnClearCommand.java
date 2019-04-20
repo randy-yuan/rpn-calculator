@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 import java.util.NoSuchElementException;
 
 public class RpnClearCommand extends RpnCommand {
+    public RpnClearCommand(RpnContext context) {
+        super(context);
+    }
+
     @Override
     public Operator getOperator() {
         return Operator.CLEAR;

@@ -12,9 +12,31 @@ public enum Operator {
 
     DIV("/"),
 
+    POW("pow"),
+
     SQRT("sqrt"),
 
+    SQUARE("**"),
+
+    EXP("exp"),
+
+    TEN("ten"),
+
+    POW2("pow2"),
+
+    LN("ln"),
+
+    LOG("log"),
+
+    LOG2("log2"),
+
     NUM("num"),
+
+    E("e"),
+
+    PI("pi"),
+
+    RAND("rand"),
 
     CLEAR("clear"),
 

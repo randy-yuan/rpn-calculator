@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class RpnDivCommand extends RpnBinaryCommand {
+    public RpnDivCommand(RpnContext context) {
+        super(context);
+    }
+
     @Override
     public Operator getOperator() {
         return Operator.DIV;

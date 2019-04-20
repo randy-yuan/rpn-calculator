@@ -3,6 +3,10 @@ package randy.calculator.rpn;
 import java.math.BigDecimal;
 
 public class RpnAddCommand extends RpnBinaryCommand {
+    public RpnAddCommand(RpnContext context) {
+        super(context);
+    }
+
     @Override
     public Operator getOperator() {
         return Operator.ADD;
