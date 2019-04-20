@@ -4,6 +4,10 @@ import java.math.BigDecimal;
 import java.util.NoSuchElementException;
 
 public class RpnNumberCommand extends RpnCommand {
+    public RpnNumberCommand(RpnContext context) {
+        super(context);
+    }
+
     @Override
     public Operator getOperator() {
         return Operator.NUM;

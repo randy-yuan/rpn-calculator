@@ -11,12 +11,20 @@ import java.util.LinkedList;
  * Created by randy on 18/10/30.
  */
 public class RpnContext {
+  private static final int DEFAULT_STACK_SIZE = 1000;
+
   private Deque<BigDecimal> stack;
   private Deque<BigDecimal> history;
+  private int maxStackSize;
   private String op;
   private int pos;
 
   public RpnContext() {
+    this(DEFAULT_STACK_SIZE);
+  }
+
+  public RpnContext(int maxStackSize) {
+    this.maxStackSize = maxStackSize;
     stack = new LinkedList<>();
     history = new LinkedList<>();
   }
@@ -36,7 +44,11 @@ public class RpnContext {
   }
 
   public RpnContext push(BigDecimal number) {
-    stack.addLast(number);
+    if (stack.size() < maxStackSize) {
+      stack.addLast(number);
+    } else {
+      throw new RpnStackOverflowException(this);
+    }
     return this;
   }
 
@@ -45,6 +57,9 @@ public class RpnContext {
   }
 
   public RpnContext pushHistory(BigDecimal number) {
+    if (history.size() >= maxStackSize) {
+      history.removeFirst();
+    }
     history.addLast(number);
     return this;
   }

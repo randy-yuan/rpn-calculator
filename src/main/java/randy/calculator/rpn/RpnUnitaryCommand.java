@@ -3,6 +3,10 @@ package randy.calculator.rpn;
 import java.util.NoSuchElementException;
 
 public abstract class RpnUnitaryCommand extends RpnCommand {
+    public RpnUnitaryCommand(RpnContext context) {
+        super(context);
+    }
+
     @Override
     public int operandCount() {
         return 1;

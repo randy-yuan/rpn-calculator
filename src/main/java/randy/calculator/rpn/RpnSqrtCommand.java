@@ -5,7 +5,9 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 
 public class RpnSqrtCommand extends RpnUnitaryCommand {
-    private static final int PRECISION = 100;
+    public RpnSqrtCommand(RpnContext context) {
+        super(context);
+    }
 
     @Override
     public Operator getOperator() {
