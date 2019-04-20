@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -7,13 +7,14 @@ import org.junit.Before;
  * Created by randy on 18/11/3.
  */
 public class BaseTest {
-  protected CalculatorContext context;
+  protected RpnContext context;
   protected RpnCalculator calculator;
 
   @Before
   public void init() {
-    context = new CalculatorContext();
+    context = new RpnContext();
     calculator = new RpnCalculator(context);
+    RpnMain.initCommands(calculator, context);
   }
 
   protected void test(String input, String result) {

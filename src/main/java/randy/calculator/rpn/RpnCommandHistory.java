@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -7,14 +7,14 @@ import java.util.Optional;
 /**
  * Created by randy on 18/10/30.
  */
-public class OpCommandHistory {
+public class RpnCommandHistory {
   private final int DEFAULT_HISTORY_NUM = 16;
 
   private int maxHistory = DEFAULT_HISTORY_NUM;
 
-  private Deque<OpCommand> commands;
+  private Deque<RpnCommand> commands;
 
-  public OpCommandHistory() {
+  public RpnCommandHistory() {
     commands = new LinkedList<>();
   }
 
@@ -22,11 +22,11 @@ public class OpCommandHistory {
     this.maxHistory = maxHistory;
   }
 
-  public Optional<OpCommand> pop() {
+  public Optional<RpnCommand> pop() {
     return Optional.ofNullable(commands.pollLast());
   }
 
-  public void push(OpCommand command) {
+  public void push(RpnCommand command) {
     if (commands.size() == maxHistory) {
       commands.pollFirst();
     }

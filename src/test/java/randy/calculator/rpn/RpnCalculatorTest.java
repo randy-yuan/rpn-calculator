@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import org.junit.Test;
 import org.junit.Assert;
@@ -56,7 +56,7 @@ public class RpnCalculatorTest extends BaseTest {
     test("clear 3 sqrt", "1.7320508075");
     try {
       test("clear -1 sqrt", "");
-    } catch (CalculatorException e) {
+    } catch (RpnException e) {
       Assert.assertEquals("-1", context.stackContent());
       Assert.assertEquals("sqrt", e.getOp());
       Assert.assertEquals(10, e.getPos());

@@ -18,6 +18,6 @@ dependencies {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'calculator.rpn.RpnMain'
+        attributes 'Main-Class': 'randy.calculator.rpn.RpnMain'
     }
 }

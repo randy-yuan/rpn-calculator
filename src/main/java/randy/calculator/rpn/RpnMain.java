@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,11 +19,23 @@ import java.io.PrintWriter;
  *   exit  - exit the calculator
  */
 public class RpnMain {
+  public static void initCommands(RpnCalculator calculator, RpnContext context) {
+    calculator.setCommand(Operator.ADD, new RpnAddCommand().setContext(context));
+    calculator.setCommand(Operator.SUB, new RpnSubCommand().setContext(context));
+    calculator.setCommand(Operator.MUL, new RpnMulCommand().setContext(context));
+    calculator.setCommand(Operator.DIV, new RpnDivCommand().setContext(context));
+    calculator.setCommand(Operator.SQRT, new RpnSqrtCommand().setContext(context));
+    calculator.setCommand(Operator.CLEAR, new RpnClearCommand().setContext(context));
+    calculator.setCommand(Operator.NUM, new RpnNumberCommand().setContext(context));
+  }
+
   public static void main(String[] args) {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     PrintWriter pw = new PrintWriter(System.out);
-    CalculatorContext context = new CalculatorContext();
+    RpnContext context = new RpnContext();
     RpnCalculator calculator = new RpnCalculator(context);
+    initCommands(calculator, context);
+
     try {
       boolean success = true;
       while (success) {

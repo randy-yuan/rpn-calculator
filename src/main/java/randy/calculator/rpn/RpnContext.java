@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -10,37 +10,80 @@ import java.util.LinkedList;
 /**
  * Created by randy on 18/10/30.
  */
-public class CalculatorContext {
+public class RpnContext {
   private Deque<BigDecimal> stack;
-  private OpCommandHistory commandHistory;
+  private Deque<BigDecimal> history;
+  private String op;
+  private int pos;
 
-  public CalculatorContext() {
+  public RpnContext() {
     stack = new LinkedList<>();
-    commandHistory = new OpCommandHistory();
-  }
-
-  public BigDecimal pop() {
-    return stack.removeLast();
+    history = new LinkedList<>();
   }
 
   public BigDecimal peek() {
     return stack.peekLast();
   }
 
-  public void push(BigDecimal number) {
+  public BigDecimal pop() {
+    return stack.removeLast();
+  }
+
+  public BigDecimal popToHistory() {
+    BigDecimal num = pop();
+    pushHistory(num);
+    return num;
+  }
+
+  public RpnContext push(BigDecimal number) {
     stack.addLast(number);
+    return this;
+  }
+
+  public BigDecimal popHistory() {
+    return history.removeLast();
+  }
+
+  public RpnContext pushHistory(BigDecimal number) {
+    history.addLast(number);
+    return this;
+  }
+
+  public RpnContext recover(int n) {
+    for (int i = 0; i < n; i++) {
+      push(popHistory());
+    }
+    return this;
   }
 
   public boolean isEmpty() {
     return stack.isEmpty();
   }
 
+  public boolean isNotEmpty() {
+    return !isEmpty();
+  }
+
   public int stackSize() {
     return stack.size();
   }
 
-  public OpCommandHistory getCommandHistory() {
-    return commandHistory;
+  public String getOp() {
+    return op;
+  }
+
+  public RpnContext setOp(String op) {
+    this.op = op;
+    return this;
+  }
+
+  public int getPos() {
+    return pos;
+  }
+
+  public RpnContext setPos(int pos) {
+    this.pos = pos;
+    return this;
   }
 
   /**
@@ -74,10 +117,10 @@ public class CalculatorContext {
   }
 
   /**
-   * Resets the context, clears the stack and the command histories.
+   * Resets the stack.
    */
   public void reset() {
     stack.clear();
-    commandHistory.clear();
+    history.clear();
   }
 }

@@ -25,7 +25,7 @@ stack: 1.1547005383
 undo
 stack: 1.3333333333
 clear
-stack: 
+stack:
 undo
 stack: 1.3333333333
 </pre>
