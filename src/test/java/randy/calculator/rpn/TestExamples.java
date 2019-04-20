@@ -1,4 +1,4 @@
-package calculator.rpn;
+package randy.calculator.rpn;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,31 +1,31 @@
 # A command-line based RPN (reverse polish notation) calculator.
 
 The following operators are supported:
-*   '+'   - performs the addition on the top two items from the stack
-*   '-'   - performs the subtraction on the top two items from the stack
-*   '*'   - performs the multiplication on the top two items from the stack
-*   '/'   - performs the division on the top two items from the stack
-*   sqrt  - performs a square root on the top item from the stack
+*   '+'   - performs the addition on the top two items from the context
+*   '-'   - performs the subtraction on the top two items from the context
+*   '*'   - performs the multiplication on the top two items from the context
+*   '/'   - performs the division on the top two items from the context
+*   sqrt  - performs a square root on the top item from the context
 *   undo  - undoes the previous operation, “undo undo” will undo the previous two operations
-*   clear - removes all items from the stack
+*   clear - removes all items from the context
 *   exit  - exit the calculator
 
 Examples:
 <pre>
 1 2 +
-stack: 3
+context: 3
 2 -
-stack: 1
+context: 1
 4 *
-stack: 4
+context: 4
 3 /
-stack: 1.3333333333
+context: 1.3333333333
 sqrt
-stack: 1.1547005383
+context: 1.1547005383
 undo
-stack: 1.3333333333
+context: 1.3333333333
 clear
-stack: 
+context:
 undo
-stack: 1.3333333333
+context: 1.3333333333
 </pre>
